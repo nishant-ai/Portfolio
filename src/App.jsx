@@ -61,7 +61,7 @@ const HomePage = () => (
             <EmailIcon />
             <span>Mail Me</span>
           </a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="resumeButton">
+          <a href={process.env.PUBLIC_URL + "/resume.pdf"} target="_blank" rel="noopener noreferrer" className="resumeButton">
             <DescriptionIcon />
             <span>Get Resume</span>
           </a>
