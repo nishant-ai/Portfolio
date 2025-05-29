@@ -3,22 +3,38 @@
   "name": "Nishant Sharma Portfolio",
   "icons": [
     {
-      "src": "logo.jpg",
+      "src": "/Portfolio/favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/jpg"
+      "type": "image/x-icon"
     },
     {
-      "src": "logo-192.png",
+      "src": "/Portfolio/android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo-512.png",
+      "src": "/Portfolio/android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "/Portfolio/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/Portfolio/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/Portfolio/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
     }
   ],
-  "start_url": ".",
+  "start_url": "/Portfolio/",
+  "scope": "/Portfolio/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#000000"
