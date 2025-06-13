@@ -18,6 +18,7 @@ import Projects from './components/Projects';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import ArticleIcon from '@mui/icons-material/Article';
+import CodeOffIcon from '@mui/icons-material/CodeOff';
 
 // Assets
 import cyberBotsWorking from "./assets/cyber-bots-working.gif";
@@ -85,6 +86,16 @@ const HomePage = () => (
           >
             <div className="socialIcon">
               <GitHubIcon sx={{ fontSize: 25 }} />
+            </div>
+          </a>
+
+          <a
+            href="https://leetcode.com/u/Nishhant/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="socialIcon">
+              <CodeIcon sx={{ fontSize: 25 }} />
             </div>
           </a>
 
