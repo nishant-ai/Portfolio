@@ -661,10 +661,12 @@
 
 .projectsContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  width: 80%;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  width: 90%;
   max-width: 1200px;
+  justify-content: center;
+  align-items: start;
 }
 
 .projectCard {
@@ -676,8 +678,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 250px;
+  height: 400px;
+  width: 100%;
   backdrop-filter: blur(10px);
+  box-sizing: border-box;
 }
 
 .projectCard:hover {
@@ -819,10 +823,35 @@
   transform: rotate(180deg);
 }
 
+.showMoreButton {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.showMoreButton:hover {
+  background: white;
+  color: black;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
   .projectsContainer {
     grid-template-columns: 1fr;
-    width: 90%;
+    width: 95%;
+    gap: 30px;
+  }
+  
+  .projectCard {
+    max-width: none;
   }
 }
 

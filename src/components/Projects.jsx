@@ -5,11 +5,14 @@ import {
   KeyboardArrowDown,
   Code,
   Psychology,
-  SportsBasketball
+  SportsBasketball,
+  AccountTree,
+  Functions
 } from '@mui/icons-material';
 
 const Projects = () => {
   const [expandedRepos, setExpandedRepos] = useState({});
+  const [showAll, setShowAll] = useState(false);
 
   const projects = [
     {
@@ -45,6 +48,30 @@ const Projects = () => {
       ]
     },
     {
+      title: "PINNs Burgers Equation",
+      description: "Physics-Informed Neural Networks (PINNs) implementation for solving Burgers' equation. Combines deep learning with physics constraints to solve partial differential equations.",
+      techStack: ["Python", "TensorFlow", "PyTorch", "Neural Networks", "Physics Simulation"],
+      icon: <Functions sx={{ color: '#00f3ff', fontSize: 28 }} />,
+      repos: [
+        {
+          name: "PINNs-Burgers-Equation",
+          url: "https://github.com/nishant-ai/PINNs-Burgers-Equation"
+        }
+      ]
+    },
+    {
+      title: "Student Stress Decision Trees",
+      description: "Machine learning project using decision trees to analyze and predict student stress levels based on various academic and personal factors. Implements data analysis and visualization techniques.",
+      techStack: ["Python", "Scikit-learn", "Pandas", "Matplotlib", "Decision Trees"],
+      icon: <AccountTree sx={{ color: '#00f3ff', fontSize: 28 }} />,
+      repos: [
+        {
+          name: "student-stress-decision-trees",
+          url: "https://github.com/nishant-ai/student-stress-decision-trees"
+        }
+      ]
+    },
+    {
       title: "Pickup WebApp",
       description: "A hackathon project that shows Pickup Games in your area using ML-based algorithms. Helps users find and join local sports games and activities.",
       techStack: ["React", "Node.js", "Machine Learning", "Google Maps API"],
@@ -69,11 +96,18 @@ const Projects = () => {
     }));
   };
 
+  const displayedProjects = showAll ? projects : projects.slice(0, 3);
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
+
+
   return (
     <section className="projectsSection">
       <h2 className="sectionTitle">Featured Projects</h2>
       <div className="projectsContainer">
-        {projects.map((project, index) => (
+        {displayedProjects.map((project, index) => (
           <div key={index} className="projectCard">
             <div className="projectContent">
               <div className="projectHeader">
@@ -111,6 +145,11 @@ const Projects = () => {
           </div>
         ))}
       </div>
+      {projects.length > 3 && (
+        <button className="showMoreButton" onClick={toggleShowAll}>
+          {showAll ? 'Show Less' : 'Show More'}
+        </button>
+      )}
     </section>
   );
 };
