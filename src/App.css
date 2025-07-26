@@ -684,6 +684,11 @@
   box-sizing: border-box;
 }
 
+.projectCard:has(.repoList.expanded) {
+  height: auto;
+  min-height: 400px;
+}
+
 .projectCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 20px rgba(0, 243, 255, 0.1);

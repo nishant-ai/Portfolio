@@ -31,7 +31,7 @@ const Projects = () => {
         },
         {
           name: "Kronos-Dashboard",
-          url: "http://github.com/nishant-ai/Kronos-Dashboard"
+          url: "https://github.com/nishant-ai/Kronos-Dashboard"
         }
       ]
     },
