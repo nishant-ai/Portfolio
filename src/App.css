@@ -3,6 +3,166 @@
   color: white;
 }
 
+/* Info Banner Styles */
+.info-banner {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(0, 9, 121, 0.95) 0%, rgba(0, 0, 0, 0.95) 100%);
+  border-bottom: 2px solid rgba(0, 243, 255, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  animation: slideDown 0.5s ease-out;
+  box-shadow: 0 4px 15px rgba(0, 243, 255, 0.1);
+}
+
+.banner-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.banner-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.banner-icon {
+  font-size: 1.3rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.banner-text p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.banner-highlight {
+  color: #00f3ff;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.banner-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-bottom: 2px solid #00f3ff;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.banner-link:hover {
+  color: #00f3ff;
+  transform: translateY(-2px);
+  border-bottom-color: #ffffff;
+}
+
+.banner-arrow {
+  font-size: 16px !important;
+  transition: transform 0.3s ease;
+}
+
+.banner-link:hover .banner-arrow {
+  transform: translate(2px, -2px);
+}
+
+.banner-dismiss {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.banner-dismiss:hover {
+  background: rgba(0, 243, 255, 0.2);
+  color: #00f3ff;
+  border-color: #00f3ff;
+  transform: rotate(90deg);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-content {
+    padding: 12px 20px;
+    flex-direction: row;
+  }
+
+  .banner-text {
+    gap: 8px;
+  }
+
+  .banner-text p {
+    font-size: 0.85rem;
+  }
+
+  .banner-icon {
+    font-size: 1.1rem;
+  }
+
+  .banner-dismiss {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-content {
+    padding: 10px 15px;
+  }
+
+  .banner-text p {
+    font-size: 0.8rem;
+  }
+
+  .banner-link {
+    padding: 2px 4px;
+  }
+}
+
 .Hero {
   padding: 5vh 0;
   width: 100vw;

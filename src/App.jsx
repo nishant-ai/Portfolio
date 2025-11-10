@@ -22,9 +22,62 @@ import CodeOffIcon from '@mui/icons-material/CodeOff';
 
 // Assets
 import cyberBotsWorking from "./assets/cyber-bots-working.gif";
+import { useState, useEffect } from "react";
+
+const InfoBanner = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [isDismissed, setIsDismissed] = useState(false);
+
+  useEffect(() => {
+    const dismissed = localStorage.getItem('bannerDismissed');
+    if (dismissed === 'true') {
+      setIsVisible(false);
+      setIsDismissed(true);
+    }
+  }, []);
+
+  const handleDismiss = () => {
+    localStorage.setItem('bannerDismissed', 'true');
+    setIsVisible(false);
+    setIsDismissed(true);
+  };
+
+  if (isDismissed) return null;
+
+  return (
+    <>
+      {isVisible && (
+        <div className="info-banner">
+          <div className="banner-content">
+            <div className="banner-text">
+              <span className="banner-icon">📌</span>
+              <p>
+                This portfolio was built during my undergrad days. For my latest work and updates{" "}
+                <span className="banner-highlight">(recruiters, this way!)</span>, check out{" "}
+                <a
+                  href="https://www.hellonish.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="banner-link"
+                >
+                  hellonish.dev
+                  <ArrowOutwardIcon className="banner-arrow" />
+                </a>
+              </p>
+            </div>
+            <button onClick={handleDismiss} className="banner-dismiss" aria-label="Dismiss banner">
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
 
 const HomePage = () => (
   <div className="App">
+    <InfoBanner />
     <div className="Hero">
       <div className="displaySpace">
         <div className="welcomeTyper">
